@@ -1,0 +1,119 @@
+.destination-list-container {
+    padding: 60px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.destination-list-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    position: relative;
+    display: inline-block;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, #3498db, #2ecc71);
+        border-radius: 2px;
+    }
+}
+
+.section-subtitle {
+    font-size: 18px;
+    color: var(--text-secondary);
+    margin-top: 20px;
+}
+
+.results-count {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 16px;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.destination-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    animation: fadeIn 0.6s ease-in;
+}
+
+.no-results {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--text-secondary);
+
+    i {
+        font-size: 64px;
+        margin-bottom: 20px;
+        opacity: 0.3;
+    }
+
+    p {
+        font-size: 18px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// Dark mode
+.dark-mode {
+    .section-title {
+        color: #f1f2f6;
+    }
+
+    .section-subtitle,
+    .results-count {
+        color: #a4b0be;
+    }
+}
+
+// Responsive
+@media (max-width: 1200px) {
+    .destination-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .destination-list-container {
+        padding: 40px 16px;
+    }
+
+    .section-title {
+        font-size: 32px;
+    }
+
+    .section-subtitle {
+        font-size: 16px;
+    }
+
+    .destination-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}

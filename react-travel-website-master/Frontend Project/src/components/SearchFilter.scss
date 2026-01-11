@@ -1,0 +1,209 @@
+.search-filter-container {
+    background: var(--card-bg);
+    padding: 40px 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    margin: 40px auto;
+    max-width: 1200px;
+}
+
+.search-filter-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.search-box {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.search-icon {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+    font-size: 18px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 16px 50px 16px 50px;
+    border: 2px solid var(--border-color);
+    border-radius: 50px;
+    font-size: 16px;
+    background: var(--input-bg);
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    &:focus {
+        outline: none;
+        border-color: #2d6a4f;
+        box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.1);
+    }
+
+    &::placeholder {
+        color: var(--text-secondary);
+    }
+}
+
+.clear-search {
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 16px;
+    padding: 5px;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: var(--text-primary);
+    }
+}
+
+.category-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.filter-label {
+    font-weight: 600;
+    color: var(--text-primary);
+    text-align: center;
+    width: 100%;
+    margin-bottom: 12px;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.category-btn {
+    padding: 12px 28px;
+    border: 2px solid var(--border-color);
+    background: var(--card-bg);
+    color: var(--text-primary);
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: capitalize;
+
+    &:hover {
+        border-color: #2d6a4f;
+        color: #2d6a4f;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(45, 106, 79, 0.2);
+    }
+
+    &.active {
+        background: linear-gradient(135deg, #2d6a4f, #0077b6);
+        color: white;
+        border-color: transparent;
+        box-shadow: 0 4px 12px rgba(45, 106, 79, 0.3);
+    }
+}
+
+.clear-filters-btn {
+    padding: 10px 20px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &:hover {
+        background: #c0392b;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+    }
+
+    i {
+        font-size: 12px;
+    }
+}
+
+// Dark mode
+.dark-mode {
+    .search-filter-container {
+        background: rgba(30, 39, 46, 0.95);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .search-input {
+        background: #2f3640;
+        border-color: #353b48;
+        color: #f1f2f6;
+
+        &:focus {
+            border-color: #3498db;
+        }
+    }
+
+    .category-btn {
+        background: #2f3640;
+        border-color: #353b48;
+        color: #f1f2f6;
+
+        &:hover {
+            border-color: #3498db;
+            color: #3498db;
+        }
+    }
+}
+
+// Responsive
+@media (max-width: 768px) {
+    .search-filter-container {
+        padding: 20px 16px;
+        top: 70px;
+    }
+
+    .search-box {
+        margin-bottom: 16px;
+    }
+
+    .search-input {
+        font-size: 14px;
+        padding: 12px 45px 12px 45px;
+    }
+
+    .category-filters {
+        gap: 8px;
+    }
+
+    .filter-label {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 8px;
+    }
+
+    .category-btn {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+
+    .clear-filters-btn {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+}
